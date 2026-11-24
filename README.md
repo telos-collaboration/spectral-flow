@@ -4,9 +4,7 @@
 
 It retains the original calculation: filtering $D_W^\dagger D_W$, then using $H_W = \gamma_5 D_W$ to reconstruct eigenvalues and check convergence. Eigenvalues and the real and imaginary parts of chirality are printed to standard output.
 
-The adaptation adds command-line XML input, a loop over saved configurations, and XML controls for the spectral scan and Lanczos parameters. It does not introduce a custom eigensolver or separate signed-subspace diagonalisation, so the original Grid eigensolver’s behaviour and limitations remain.
-
-The code can be adapted to other gauge theories and fermion representations by updating the relevant implementation and recompiling against the appropriate version of Grid.
+The adaptation adds command-line XML input, a loop over saved configurations, and XML controls for the spectral scan and Lanczos parameters. The code can be adapted to other gauge theories and fermion representations by updating the relevant implementation and recompiling against the appropriate version of Grid.
 
 ## Build
 
