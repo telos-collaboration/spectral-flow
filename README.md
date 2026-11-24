@@ -36,10 +36,6 @@ make -j2
 
 The application uses Grid's SU adjoint types directly (`WilsonAdjFermionD`
 and `AdjointRepresentation`); use an Nc=2 Grid installation for SU(2).
-Nc and MPI/SIMD/backend choices come from your installed Grid. If `grid-config`
-is already on PATH, simply run `../configure`.
-If required by your Homebrew Grid installation, add
-`CPPFLAGS=-I/opt/homebrew/opt/openssl@3/include` to the configure command.
 
 ## Input and run
 
