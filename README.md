@@ -34,7 +34,7 @@ XML parameters:
 - `Nstop`, `Nk`, `Np`, `MaxIt`, `resid`: the original Grid IRL parameters;
   maximum basis size is `Nm = Nk + Np`.
 - `ChebyLow`, `ChebyHigh`, `ChebyOrder`: original Chebyshev constructor arguments,
-  applied to D_W dagger D_W. Order means degree + 1 in this Grid implementation.
+  applied to $D_W^{\dagger} D_W$. Order means degree + 1 in this Grid implementation.
   The example filter settings are starting values, not automatically tuned.
 - `boundary_conditions`: four `<elem>` entries in x,y,z,t order, +1 periodic
   or -1 antiperiodic. All periodic reproduces the original test's default.
