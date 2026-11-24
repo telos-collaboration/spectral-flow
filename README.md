@@ -1,28 +1,12 @@
 # Adjoint Wilson spectral flow
 
-`spectral_flow` is a direct adaptation of
-`Grid/tests/lanczos/Test_wilson_specflow.cc`. It retains the original calculation:
+`spectral_flow` is an adaptation of `Grid/tests/lanczos/Test_wilson_specflow.cc` for SU(2) gauge theory with two adjoint fermions.
 
-```cpp
-MdagMLinearOperator<FermionOp,FermionField> HermOp(WilsonOperator);
-Gamma5HermitianLinearOperator<FermionOp,FermionField> HermOp2(WilsonOperator);
-Chebyshev<FermionField> Cheby(p.ChebyLow,p.ChebyHigh,p.ChebyOrder);
-FunctionHermOp<FermionField> OpCheby(Cheby,HermOp);
-PlainHermOp<FermionField> Op2(HermOp2);
-ImplicitlyRestartedLanczos<FermionField> IRL(OpCheby,Op2,Nstop,Nk,Nm,resid,MaxIt);
-IRL.calc(eval,evec,src,Nconv);
-```
+It retains the original calculation: filtering \(D_W^\dagger D_W\), then using \(H_W = \gamma_5 D_W\) to reconstruct eigenvalues and check convergence. Eigenvalues and the real and imaginary parts of chirality are printed to standard output.
 
-There is no custom eigensolver, extra signed subspace diagonalization, or CSV
-output. As in the original, the calculation filters D_W dagger D_W and uses
-H_W = gamma5 D_W for eigenvalue reconstruction and convergence checks. It prints
-the eigenvalues and real/imaginary parts of chirality to standard output.
+The adaptation adds command-line XML input, a loop over saved configurations, and XML controls for the spectral scan and Lanczos parameters. It does not introduce a custom eigensolver or separate signed-subspace diagonalisation, so the original Grid eigensolver’s behaviour and limitations remain.
 
-The adaptations are adjoint fermions/links, an XML filename supplied on the
-command line, a saved-configuration loop, and XML control of the scan and
-Lanczos parameters. Unused objects and dead assignments from the original test
-are omitted. The original Grid eigensolver's behavior and limitations are retained;
-this adaptation does not independently resolve its degeneracy/convergence issues.
+The code can be adapted to other gauge theories and fermion representations by updating the relevant implementation and recompiling against the appropriate version of Grid.
 
 ## Build
 
