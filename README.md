@@ -1,6 +1,6 @@
 # Adjoint Wilson spectral flow
 
-`spectral_flow` is an adaptation of `Grid/tests/lanczos/Test_wilson_specflow.cc` for SU(2) gauge theory with two adjoint fermions.
+`spectral-flow` is an adaptation of `Grid/tests/lanczos/Test_wilson_specflow.cc` for SU(2) gauge theory with two adjoint fermions.
 
 It retains the original calculation: filtering \(D_W^\dagger D_W\), then using \(H_W = \gamma_5 D_W\) to reconstruct eigenvalues and check convergence. Eigenvalues and the real and imaginary parts of chirality are printed to standard output.
 
