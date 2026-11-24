@@ -68,7 +68,3 @@ XML parameters:
 - `boundary_conditions`: four `<elem>` entries in x,y,z,t order, +1 periodic
   or -1 antiperiodic. All periodic reproduces the original test's default.
 - `rng_seeds`: Grid RNG seed vector. The example reproduces the original seeds.
-
-For each scan point the log includes a configuration/M5/mass/Nconv label, then
-the original `mass : eigenvalue real(chirality) imag(chirality)` lines. There is
-no automatic classification of an M5 value as safe.
